@@ -1,0 +1,53 @@
+.navbar {
+    position: relative;
+    background-color: #f1f9fc;
+    padding: 0.5rem 1rem;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+
+.btn-solid-lg {
+    display: inline-block;
+    padding: 1.625rem 2.75rem 1.625rem 2.75rem;
+    border: 1px solid #594cda;
+    border-radius: 32px;
+    background-color: #594cda;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 0;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-right: 0.25rem;
+    margin-bottom: 1.25rem;
+    margin-left: 0.25rem;
+}
+
+.btn-solid-lg:hover {
+    border: 1px solid #594cda;
+    background-color: transparent;
+    color: #594cda;
+    /* needs to stay here because of the color property of a tag */
+    text-decoration: none;
+}
+
+h3 {
+    color: #252c38;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.3px;
+    margin-left: 20px;
+    margin-right: 230px;
+}
+
+nav {
+    padding-top: 20;
+    padding-bottom: -10;
+}

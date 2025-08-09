@@ -1,0 +1,24 @@
+<div class="container">
+  <h3 class="heading">Concours SI</h3>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" class="form-control" id="username" formControlName="username" autocomplete="off">
+      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger">
+        Le nom d'utilisateur est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" class="form-control" id="password" formControlName="password" autocomplete="off">
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+        Le mot de passe est requis.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+
+  </form>
+</div>

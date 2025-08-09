@@ -1,0 +1,97 @@
+
+<div class="container">
+  <h3 class="heading">Concours SI</h3>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="firstname">Prénom</label>
+      <input type="text" class="form-control" id="firstname" formControlName="firstname" autocomplete="off">
+      <div *ngIf="userForm.get('firstname')?.invalid && userForm.get('firstname')?.touched" class="text-danger">
+        Le Prénom est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Nom</label>
+      <input type="text" class="form-control" id="lastname" formControlName="lastname" autocomplete="off">
+      <div *ngIf="userForm.get('lastname')?.invalid && userForm.get('lastname')?.touched" class="text-danger">
+        Le Nom est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateNaissance">Date de Naissance</label>
+      <input type="date" class="form-control" id="dateNaissance" formControlName="dateNaissance">
+      <div *ngIf="userForm.get('dateNaissance')?.invalid && userForm.get('dateNaissance')?.touched" class="text-danger">
+        La date de naissance est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lieuNaissance">Lieu de Naissance</label>
+      <input type="text" class="form-control" id="lieuNaissance" formControlName="lieuNaissance" autocomplete="off">
+      <div *ngIf="userForm.get('lieuNaissance')?.invalid && userForm.get('lieuNaissance')?.touched" class="text-danger">
+        Le lieu de naissance est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Adresse</label>
+      <input type="text" class="form-control" id="address" formControlName="address" autocomplete="off">
+      <div *ngIf="userForm.get('address')?.invalid && userForm.get('address')?.touched" class="text-danger">
+        L'adresse est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nationalite">Nationalité</label>
+      <input type="text" class="form-control" id="nationalite" formControlName="nationalite" autocomplete="off">
+      <div *ngIf="userForm.get('nationalite')?.invalid && userForm.get('nationalite')?.touched" class="text-danger">
+        La nationalité est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="serie">Série</label>
+      <select class="form-control" id="serie" formControlName="serie">
+        <option value="">-- Sélectionner --</option>
+        <option value="S1">S1</option>
+        <option value="S2">S2</option>
+        <option value="S3">S3</option>
+        <option value="L2">L2</option>
+        <option value="S4">S4</option>
+        <option value="neant">Néant</option>
+      </select>
+      <div *ngIf="userForm.get('serie')?.invalid && userForm.get('serie')?.touched" class="text-danger">
+        La série est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email" autocomplete="off">
+      <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="text-danger">
+        Un email valide est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Téléphone</label>
+      <input type="text" class="form-control" id="phone" formControlName="phone" autocomplete="off">
+      <div *ngIf="userForm.get('phone')?.invalid && userForm.get('phone')?.touched" class="text-danger">
+        Le numéro de téléphone est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" class="form-control" id="password" formControlName="password" autocomplete="off">
+      <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched" class="text-danger">
+        Le mot de passe est requis.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+
+  </form>
+</div>

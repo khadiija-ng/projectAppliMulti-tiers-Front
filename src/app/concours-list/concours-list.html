@@ -1,0 +1,63 @@
+<div class="container">
+  <h3 class="heading">Ajout d'un concours</h3>
+  <form [formGroup]="concoursForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Nom</label>
+      <input type="text" class="form-control" id="name" formControlName="name" autocomplete="off">
+      <div *ngIf="concoursForm.get('name')?.invalid && concoursForm.get('name')?.touched" class="text-danger">
+        Le nom est obligatoire.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date_debut">Date début</label>
+      <input type="date" class="form-control" id="date_debut" formControlName="date_debut">
+      <div *ngIf="concoursForm.get('date_debut')?.invalid && concoursForm.get('date_debut')?.touched" class="text-danger">
+        La date de début est obligatoire.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date_fin">Date fin</label>
+      <input type="date" class="form-control" id="date_fin" formControlName="date_fin">
+      <div *ngIf="concoursForm.get('date_fin')?.invalid && concoursForm.get('date_fin')?.touched" class="text-danger">
+        La date de fin est obligatoire.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="etat">État</label>
+      <input type="number" class="form-control" id="etat" formControlName="etat">
+      <div *ngIf="concoursForm.get('etat')?.invalid && concoursForm.get('etat')?.touched" class="text-danger">
+        L'état est obligatoire.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="etablissementId">Établissement</label>
+      <select class="form-control" id="etablissementId" formControlName="etablissementId">
+        <option value="">-- Sélectionner un établissement --</option>
+        <option *ngFor="let e of etablissements" [value]="e.id">{{ e.libelle }}</option>
+      </select>
+      <div *ngIf="concoursForm.get('etablissementId')?.invalid && concoursForm.get('etablissementId')?.touched" class="text-danger">
+        L'établissement est obligatoire.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" formControlName="description"></textarea>
+      <div *ngIf="concoursForm.get('description')?.invalid && concoursForm.get('description')?.touched" class="text-danger">
+        La description est obligatoire.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="file" class="form-control" id="image" >
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="concoursForm.invalid">Enregistrer</button>
+  </form>
+</div>

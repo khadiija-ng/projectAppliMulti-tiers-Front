@@ -1,0 +1,16 @@
+<app-header />
+
+<div class="d-flex container1" *ngIf="isSidebarRoute(); else noSidebar">
+  <div class="al-left">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="al-right">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<ng-template #noSidebar>
+  <router-outlet></router-outlet>
+</ng-template>
